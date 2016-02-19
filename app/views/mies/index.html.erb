@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Integer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mies.each do |my| %>
+      <tr>
+        <td><%= my.name %></td>
+        <td><%= my.emp_id %></td>
+        <td><%= my.address %></td>
+        <td><%= link_to 'Show', my %></td>
+        <td><%= link_to 'Edit', edit_my_path(my) %></td>
+        <td><%= link_to 'Destroy', my, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New My', new_my_path %>

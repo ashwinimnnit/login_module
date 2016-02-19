@@ -1,0 +1,22 @@
+                                                               Table "public.users"
+         Column         |            Type             |                     Modifiers                      | Storage  | Stats target | Description 
+------------------------+-----------------------------+----------------------------------------------------+----------+--------------+-------------
+ id                     | integer                     | not null default nextval('users_id_seq'::regclass) | plain    |              | 
+ email                  | character varying           | not null default ''::character varying             | extended |              | 
+ encrypted_password     | character varying           | not null default ''::character varying             | extended |              | 
+ reset_password_token   | character varying           |                                                    | extended |              | 
+ reset_password_sent_at | timestamp without time zone |                                                    | plain    |              | 
+ remember_created_at    | timestamp without time zone |                                                    | plain    |              | 
+ sign_in_count          | integer                     | not null default 0                                 | plain    |              | 
+ current_sign_in_at     | timestamp without time zone |                                                    | plain    |              | 
+ last_sign_in_at        | timestamp without time zone |                                                    | plain    |              | 
+ current_sign_in_ip     | inet                        |                                                    | main     |              | 
+ last_sign_in_ip        | inet                        |                                                    | main     |              | 
+ created_at             | timestamp without time zone | not null                                           | plain    |              | 
+ updated_at             | timestamp without time zone | not null                                           | plain    |              | 
+Indexes:
+    "users_pkey" PRIMARY KEY, btree (id)
+    "index_users_on_email" UNIQUE, btree (email)
+    "index_users_on_reset_password_token" UNIQUE, btree (reset_password_token)
+Has OIDs: no
+
